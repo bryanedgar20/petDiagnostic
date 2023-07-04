@@ -8,11 +8,7 @@
         </Label>
         <Label x:Name="texto" Text="">
         </Label>
-        <Button Text="Consultar"
-                x:Name="btnGet"
-                Clicked="btnMostrar_Clicked">
-        </Button>
-        <ListView x:Name="MyListView" >
+        <ListView x:Name="MyListView" ItemSelected="MyListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -26,6 +22,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Text="Nuevo"
+                x:Name="btnGet"
+                Clicked="btnMostrar_Clicked">
+        </Button>
     </StackLayout>
 
 </ContentPage>

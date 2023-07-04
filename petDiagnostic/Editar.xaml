@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="petDiagnostic.Editar">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Actualizar estudiante" FontSize="20" HorizontalTextAlignment="Center"/>
+
+            <Entry x:Name="txtCodigo" IsReadOnly="True" Placeholder="Ingrese Codigo" Keyboard="Numeric"/>
+            <Entry x:Name="txtNombre" Placeholder="Ingrese Nombre" Keyboard="Text"/>
+            <Entry x:Name="txtApellido" Placeholder="Ingrese Apellido" Keyboard="Text"/>
+            <Entry x:Name="txtEdad" Placeholder="Ingrese Edad" Keyboard="Numeric"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                   
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnGuardar" Text="Guardar" BackgroundColor="SkyBlue"  Grid.Row="1" Grid.Column="0" Clicked="btnGuardar_Clicked"/>
+                <Button x:Name="btbEliminar" Text="Eliminar" BackgroundColor="Salmon"  Grid.Row="1" Grid.Column="1"  Clicked="btbEliminar_Clicked"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

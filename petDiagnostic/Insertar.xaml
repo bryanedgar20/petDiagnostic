@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="petDiagnostic.Insertar">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Insertar estudiante" FontSize="20" HorizontalTextAlignment="Center"/>
+
+            <Entry x:Name="txtCodigo" Placeholder="Ingrese Codigo" Keyboard="Numeric"/>
+            <Entry x:Name="txtNombre" Placeholder="Ingrese Nombre" Keyboard="Text"/>
+            <Entry x:Name="txtApellido" Placeholder="Ingrese Apellido" Keyboard="Text"/>
+            <Entry x:Name="txtEdad" Placeholder="Ingrese Edad" Keyboard="Numeric"/>
+            <Button x:Name="btbInsertar" Text="Guardar" Clicked="btbInsertar_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
