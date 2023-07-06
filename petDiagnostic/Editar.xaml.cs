@@ -39,7 +39,8 @@ namespace petDiagnostic
               
 
                 client.UploadValues(url, "PUT", parametros);
-                DisplayAlert("Alerta", "Datos ingresados correctamente", "Aceptar");
+                //DisplayAlert("Alerta", "Datos ingresados correctamente", "Aceptar");
+                DependencyService.Get<Mensaje>().longAlert("Datos actualizados correctamente");
                 Navigation.PushAsync(new MainPage());
             }
             catch (Exception ex)
@@ -65,7 +66,7 @@ namespace petDiagnostic
 
 
                 client.UploadValues(url, "DELETE", parametros);
-                DisplayAlert("Alerta", "Datos ingresados correctamente", "Aceptar");
+                DependencyService.Get<Mensaje>().longAlert("Datos eliminados correctamente");
                 Navigation.PushAsync(new MainPage());
             }
             catch (Exception ex)
