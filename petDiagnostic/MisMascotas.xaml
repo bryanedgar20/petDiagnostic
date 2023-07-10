@@ -12,7 +12,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Image Source="profile.png" Aspect="AspectFill" HeightRequest="300"/>
-                <ImageButton Source="add.png" Grid.Row="0" VerticalOptions="End" HorizontalOptions="End" HeightRequest="70" WidthRequest="70" TranslationY="35" Margin="10,0"/>
+                <ImageButton Source="add.png" Grid.Row="0" VerticalOptions="End" BackgroundColor="Transparent" HorizontalOptions="End" HeightRequest="70" WidthRequest="70" TranslationY="35" Margin="10,0" Clicked="ImageButton_Clicked"/>
                 <Label Text="Pedro Pezer" FontSize="40" FontAttributes="Bold" TextColor="AliceBlue" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Start" Margin="10,0"/>
                 <Label Text="Mis Mascotas" FontSize="30" FontAttributes="Bold" Grid.Row="1" Margin="10,0"/>
                 <ListView x:Name="myListView" Grid.Row="2" Margin="10, 0" ItemTapped="myListView_ItemTapped" >

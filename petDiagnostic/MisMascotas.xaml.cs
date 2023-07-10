@@ -30,6 +30,11 @@ namespace petDiagnostic
         {
             await Navigation.PushAsync(new Mascota());
         }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NuevaMascota());
+        }
     }
 }
 
