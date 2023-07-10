@@ -3,22 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="petDiagnostic.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+    <ScrollView>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image Source="huella.png" Aspect="Fill" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" 
+                     HeightRequest="200" WidthRequest="200" TranslationY="20" Margin="30"></Image>
+            <StackLayout Grid.Row="2" Margin="45,15">
+                <Label Text="Usuario" />
+                <Entry Placeholder="Ingrese su Usuario..." />
+            </StackLayout>
+            <StackLayout Grid.Row="3" Margin="45,15">
+                <Label Text="Password" />
+                <Entry IsPassword="True" Placeholder="Ingrese Contraseña..." />
+            </StackLayout>
+            <StackLayout Grid.Row="4" Margin="45,0">
+                <Button Text="Ingresar" BackgroundColor="GreenYellow" Clicked="Button_Clicked"></Button>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
 
 </ContentPage>
