@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="petDiagnostic.AgregarConsulta">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" BackgroundColor="LightGray" Source="vet.png" Aspect="AspectFill" HeightRequest="200"/>
+                <Grid Grid.Row="1" Margin="20,0">
+                    <Button Grid.Column="0" Text="Seleccionar la Fecha" Clicked="Button_Clicked" BackgroundColor="SkyBlue" />
+                    <Entry Grid.Column="1" x:Name="dateEntry" Placeholder="Seleccione una fecha" IsReadOnly="True" />
+                    <DatePicker x:Name="datePicker" IsVisible="False" DateSelected="datePicker_DateSelected"/>                    
+                </Grid>
+                <Label Grid.Row="2" Text="Diagnóstico:" FontAttributes="Bold" VerticalOptions="End" Margin="20,20,0,0" FontSize="20" />
+                <Entry Grid.Row="3" Placeholder="Ingrese el diagnóstico..." Keyboard="Chat" MaxLength="100" HeightRequest="100" Margin="35,0,35,0" VerticalOptions="StartAndExpand" />
+                <Button Grid.Row="4" Text="Guardar" BackgroundColor="LightGreen" Margin="40"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

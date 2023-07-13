@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="petDiagnostic.NuevaMascota">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" HorizontalOptions="Center" FontSize="40" FontAttributes="Bold" Text="Agregar Mascota" />
+                <Label Grid.Row="1" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" Text="Seleccione especie:" />
+                <Grid Grid.Row="2" Margin="30,10">
+                    <Image Source="cat.png" BackgroundColor="Aquamarine" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Image.GestureRecognizers>
+                        <Image.Clip>
+                            <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+                        </Image.Clip>
+                    </Image>
+                    <Label x:Name="lblGato" Grid.Column="0" Text="Gato" VerticalOptions="End" HorizontalOptions="Center" TranslationY="25" FontSize="20"/>
+                    <Image Source="dog.png" BackgroundColor="Aquamarine" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+                        </Image.GestureRecognizers>
+                        <Image.Clip>
+                            <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+                        </Image.Clip>
+                    </Image>
+                    <Label Grid.Column="1" x:Name="lblPerro" Text="Perro" VerticalOptions="End" HorizontalOptions="Center" TranslationY="25" FontSize="20"/>
+                </Grid>
+                <Grid Grid.Row="3" Margin="30,30,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Peso actual: " FontSize="20" FontAttributes="Bold" VerticalOptions="Center" />
+                    <Entry Grid.Column="1" Placeholder="00.00  Kg"/>
+                </Grid>
+                <Grid Grid.Row="4" Margin="30,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Enfermedades: " FontSize="20" FontAttributes="Bold" VerticalOptions="Center" />
+                    <Entry Grid.Column="1" Placeholder="Enfermedades o alergias"/>
+                </Grid>
+                <Grid Grid.Row="5" Margin="30,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Cuidados: " FontSize="20" FontAttributes="Bold" VerticalOptions="Center" />
+                    <Entry Grid.Column="1" Placeholder="Cuidados especiales"/>
+                </Grid>
+                <Grid Grid.Row="6" Margin="30,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Clìnica: " FontSize="20" FontAttributes="Bold" VerticalOptions="Center" />
+                    <Entry Grid.Column="1" Placeholder="Clìnica Veterinaria"/>
+                </Grid>
+                <Button Grid.Row="7" Text="Guardar" Margin="40" BackgroundColor="LightGreen"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
