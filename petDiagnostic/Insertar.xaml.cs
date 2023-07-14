@@ -32,8 +32,10 @@ namespace petDiagnostic
                 parametros.Add("edad", txtEdad.Text);
 
                 client.UploadValues(url, "POST", parametros);
-                await DisplayAlert("Alerta", "Datos ingresados correctamente", "Aceptar");
+                //await DisplayAlert("Alerta", "Datos ingresados correctamente", "Aceptar");
+                DependencyService.Get<Mensaje>().longAlert("Datos ingresados correctamente");
                 Navigation.PushAsync(new MainPage());
+                
             }
             catch (Exception ex)
             {
