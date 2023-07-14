@@ -13,7 +13,7 @@ namespace petDiagnostic
 {
     public partial class MainPage : ContentPage
     {
-        private const string url = "http://192.168.56.1/ws_uisrael/post.php";
+        private const string url = "http://192.168.100.21/ws_uisrael/post.php";
         private HttpClient client = new HttpClient();
         private ObservableCollection<petDiagnostic.Datos> _post;
 

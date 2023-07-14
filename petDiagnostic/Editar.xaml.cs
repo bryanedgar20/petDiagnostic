@@ -35,7 +35,7 @@ namespace petDiagnostic
                 parametros.Add("apellido", txtApellido.Text);
                 parametros.Add("edad", txtEdad.Text);
 
-                string url = $"http://192.168.56.1/ws_uisrael/post.php?codigo={txtCodigo.Text}&nombre={txtNombre.Text}&apellido={txtApellido.Text}&edad={txtEdad.Text}";
+                string url = $"http://192.168.100.21/ws_uisrael/post.php?codigo={txtCodigo.Text}&nombre={txtNombre.Text}&apellido={txtApellido.Text}&edad={txtEdad.Text}";
               
 
                 client.UploadValues(url, "PUT", parametros);
@@ -61,11 +61,11 @@ namespace petDiagnostic
                 parametros.Add("apellido", txtApellido.Text);
                 parametros.Add("edad", txtEdad.Text);
 
-                string url = $"http://192.168.56.1/ws_uisrael/post.php?codigo={txtCodigo.Text}";
+                string url = $"http://192.168.100.21/ws_uisrael/post.php?codigo={txtCodigo.Text}";
 
 
                 client.UploadValues(url, "DELETE", parametros);
-                DisplayAlert("Alerta", "Datos ingresados correctamente", "Aceptar");
+                DisplayAlert("Alerta", "Datos eliminados correctamente", "Aceptar");
                 Navigation.PushAsync(new MainPage());
             }
             catch (Exception ex)

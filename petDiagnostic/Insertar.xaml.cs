@@ -24,7 +24,7 @@ namespace petDiagnostic
             try
             {
                 WebClient client = new WebClient();
-                string url = "http://192.168.56.1/ws_uisrael/post.php";
+                string url = "http://192.168.100.21/ws_uisrael/post.php";
                 var parametros = new NameValueCollection();
                 parametros.Add("codigo", txtCodigo.Text);
                 parametros.Add("nombre", txtNombre.Text);

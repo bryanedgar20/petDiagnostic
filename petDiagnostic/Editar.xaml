@@ -4,7 +4,7 @@
              x:Class="petDiagnostic.Editar">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Actualizar estudiante" FontSize="20" HorizontalTextAlignment="Center"/>
+            <Label Text="Actualizar datos estudiante" FontSize="20" HorizontalTextAlignment="Center"/>
 
             <Entry x:Name="txtCodigo" IsReadOnly="True" Placeholder="Ingrese Codigo" Keyboard="Numeric"/>
             <Entry x:Name="txtNombre" Placeholder="Ingrese Nombre" Keyboard="Text"/>
@@ -22,8 +22,8 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="btnGuardar" Text="Guardar" BackgroundColor="SkyBlue"  Grid.Row="1" Grid.Column="0" Clicked="btnGuardar_Clicked"/>
-                <Button x:Name="btbEliminar" Text="Eliminar" BackgroundColor="Salmon"  Grid.Row="1" Grid.Column="1"  Clicked="btbEliminar_Clicked"/>
+                <Button x:Name="btnGuardar" Text="Actualizar" BackgroundColor="MediumSeaGreen"  Grid.Row="1" Grid.Column="0" Clicked="btnGuardar_Clicked"/>
+                <Button x:Name="btbEliminar" Text="Eliminar"  BackgroundColor="OrangeRed" Grid.Row="1" Grid.Column="1"  Clicked="btbEliminar_Clicked"/>
 
             </Grid>
         </StackLayout>
