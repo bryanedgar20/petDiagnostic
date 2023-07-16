@@ -16,14 +16,15 @@
                      HeightRequest="200" WidthRequest="200" TranslationY="20" Margin="30"></Image>
             <StackLayout Grid.Row="2" Margin="45,15">
                 <Label Text="Usuario" />
-                <Entry Placeholder="Ingrese su Usuario..." />
+                <Entry x:Name="txtUsuario" Placeholder="Ingrese su Usuario..." />
             </StackLayout>
             <StackLayout Grid.Row="3" Margin="45,15">
                 <Label Text="Password" />
-                <Entry IsPassword="True" Placeholder="Ingrese Contraseña..." />
+                <Entry x:Name="txtClave" IsPassword="True" Placeholder="Ingrese Contraseña..." />
             </StackLayout>
             <StackLayout Grid.Row="4" Margin="45,0">
                 <Button Text="Ingresar" BackgroundColor="GreenYellow" Clicked="Button_Clicked"></Button>
+                <Button Text="Registrarse" BackgroundColor="SkyBlue" x:Name="btbRegistrar" Clicked="btbRegistrar_Clicked"></Button>
             </StackLayout>
         </Grid>
     </ScrollView>

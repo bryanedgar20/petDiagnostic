@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="petDiagnostic.MntUsuario">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10" Padding="10">
+                <Label Text="DATOS USUARIO" FontSize="18" TextColor="Black" FontAttributes="Bold" FontFamily="Arial"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Entry x:Name="txtPrimerNombre" Placeholder="Primer Nombre" Keyboard="Text" />
+                <Entry x:Name="txtPrimerApellido" Placeholder="Primer Apellido" Keyboard="Text" />
+                <Entry x:Name="txtSegundoNombre" Placeholder="Segundo Nombre" Keyboard="Text" />
+                <Entry x:Name="txtSegundoApellido" Placeholder="Segundo Apellido" Keyboard="Text" />
+                <DatePicker x:Name="dateFechaNacimiento" Format="dd/MM/yyyy"/>
+                <Entry x:Name="txtIdentificacion" Placeholder="Nro Identificacion" Keyboard="Numeric"/>
+                <Entry x:Name="txtEmail" Placeholder="Correo Electronico" Keyboard="Email" />
+                <Entry x:Name="txtNroContacto" Placeholder="Nro Contacto" Keyboard="Numeric" />
+                <Entry x:Name="txtCallePrincipal" Placeholder="Calle Principal" Keyboard="Text" />
+                <Entry x:Name="txtCalleSecundaria" Placeholder="Calle Secundaria" Keyboard="Text" />
+
+                <Entry x:Name="txtNickName" Placeholder="Usuario" Keyboard="Text" />
+                <Entry x:Name="txtClave" Placeholder="Clave" Keyboard="Text" IsPassword="true" />
+                <Entry x:Name="txtClaveConfirmar" Placeholder="ConfirmarClave" Keyboard="Text" IsPassword="true" />
+
+                <Button x:Name="btbGuardar" Text="Guardar" BackgroundColor="GreenYellow" TextColor="Black" FontSize="16" Clicked="btbGuardar_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
