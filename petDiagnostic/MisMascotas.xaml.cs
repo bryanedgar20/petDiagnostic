@@ -1,7 +1,11 @@
 ﻿using Android.Content.Res;
+using Java.Util;
+using Newtonsoft.Json;
+using petDiagnostic.ObjetosVO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,9 +17,20 @@ namespace petDiagnostic
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MisMascotas : ContentPage
     {
-        public MisMascotas()
+        Usuario usuarioGlobal = new Usuario();
+        private HttpClient client = new HttpClient();
+        public MisMascotas(Usuario usuario)
         {
-            InitializeComponent(); 
+            
+            InitializeComponent();
+            this.obtenerMascotaPorusuario(usuario);
+            usuarioGlobal = usuario;
+            lblNombreUsuario.Text = usuario.primerNombre.Trim()+ " "+ usuario.primerApellido.Trim();
+
+            
+
+            //Cargar lista de mascotas del usuario
+
             List<Item> items = new List<Item>
             {
                 new Item { Imagen = "huella.png", Texto = "Elemento 1" },
@@ -23,7 +38,9 @@ namespace petDiagnostic
                 new Item { Imagen = "huella.png", Texto = "Elemento 1" }
             };
 
-            myListView.ItemsSource = items;
+            Console.WriteLine("ListaMascota:"+ usuario.listaMascotas);
+            
+            myListView.ItemsSource = usuario.listaMascotas;
         }
 
         private async void myListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -33,7 +50,17 @@ namespace petDiagnostic
 
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NuevaMascota());
+            await Navigation.PushAsync(new NuevaMascota(usuarioGlobal));
+        }
+
+        private async void obtenerMascotaPorusuario(Usuario usuario)
+        {
+            string url = $"http://192.168.56.1:8081/mascota/obtenerMascotaPorIdusuario/{usuario.idUsuario}";
+            var content = await client.GetStringAsync(url);
+            Console.WriteLine("contentWS:" + content);
+            List<ObjetosVO.Mascota> listMascota = JsonConvert.DeserializeObject<List<ObjetosVO.Mascota>>(content);
+            Console.WriteLine("RespuestaWS:" + listMascota.Count);
+            usuario.listaMascotas = listMascota;
         }
     }
 }

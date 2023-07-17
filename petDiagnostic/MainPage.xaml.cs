@@ -36,7 +36,7 @@ namespace petDiagnostic
             if (null != usuario)
             {
 
-                await Navigation.PushAsync(new MisMascotas());
+                await Navigation.PushAsync(new MisMascotas(usuario));
             }
             else
             {

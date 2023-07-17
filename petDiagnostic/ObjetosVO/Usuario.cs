@@ -7,38 +7,22 @@ namespace petDiagnostic.ObjetosVO
 {
     public class Usuario
     {
-        private int idUsuario;
+        public int idUsuario { get; set; }
+        public string primerNombre { get; set; }
+        public string segundoNombre { get; set; }
+        public string primerApellido { get; set; }
+        public string segundoApellido { get; set; }
+        public Date fechaNacimiento { get; set; }
+        public string identificacion { get; set; }
+        public string email { get; set; }
+        public string numeroTelefono { get; set; }
+        public string callePrincipal { get; set; }
+        public string calleSecundaria { get; set; }
+        public string nickName { get; set; }
+        public string clave { get; set; }
+        public string estado { get; set; }
+        public Date fechaRegistro { get; set; }
 
-        private string primerNombre;
-        private string segundoNombre;
-        private string primerApellido;
-        private string segundoApellido;
-        private Date fechaNacimiento;
-        private string identificacion;
-        private string email;
-        private string numeroTelefono;
-        private string callePrincipal;
-        private string calleSecundaria;
-        private string nickName;
-        private string clave;
-
-        private string estado;
-        private Date fechaRegistro;
-
-        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
-        public string PrimerNombre { get => primerNombre; set => primerNombre = value; }
-        public string SegundoNombre { get => segundoNombre; set => segundoNombre = value; }
-        public string PrimerApellido { get => primerApellido; set => primerApellido = value; }
-        public string SegundoApellido { get => segundoApellido; set => segundoApellido = value; }
-        public Date FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
-        public string Identificacion { get => identificacion; set => identificacion = value; }
-        public string Email { get => email; set => email = value; }
-        public string NumeroTelefono { get => numeroTelefono; set => numeroTelefono = value; }
-        public string CallePrincipal { get => callePrincipal; set => callePrincipal = value; }
-        public string CalleSecundaria { get => calleSecundaria; set => calleSecundaria = value; }
-        public string NickName { get => nickName; set => nickName = value; }
-        public string Clave { get => clave; set => clave = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public Date FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
+        public List<Mascota> listaMascotas { get; set; }
     }
 }

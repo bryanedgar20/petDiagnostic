@@ -33,29 +33,29 @@ namespace petDiagnostic
                 string url = "http://192.168.56.1:8081/usuario/crearActualizarUsuario";
 
                 Usuario usuario = new Usuario();
-                usuario.PrimerNombre = txtPrimerNombre.Text.Trim();
-                usuario.PrimerApellido = txtPrimerApellido.Text.Trim();
-                usuario.SegundoNombre = txtSegundoNombre.Text;
-                usuario.SegundoApellido = txtSegundoApellido.Text;
+                usuario.primerNombre = txtPrimerNombre.Text.Trim();
+                usuario.primerApellido = txtPrimerApellido.Text.Trim();
+                usuario.segundoNombre = txtSegundoNombre.Text;
+                usuario.segundoApellido = txtSegundoApellido.Text;
 
                 //usuario.FechaNacimiento = (Date)Date.Parse(dateFechaNacimiento.Date.ToString("dd/MM/yyyy"));
-                usuario.Identificacion = txtIdentificacion.Text.Trim();
-                usuario.Email = txtEmail.Text.Trim();
-                usuario.NumeroTelefono = txtNroContacto.Text.Trim();
-                usuario.CallePrincipal = txtCallePrincipal.Text.Trim();
-                usuario.CalleSecundaria = txtCalleSecundaria.Text;
-                usuario.NickName = txtNickName.Text.Trim();
-                usuario.Clave = txtClave.Text.Trim();
+                usuario.identificacion = txtIdentificacion.Text.Trim();
+                usuario.email = txtEmail.Text.Trim();
+                usuario.numeroTelefono = txtNroContacto.Text.Trim();
+                usuario.callePrincipal = txtCallePrincipal.Text.Trim();
+                usuario.calleSecundaria = txtCalleSecundaria.Text;
+                usuario.nickName = txtNickName.Text.Trim();
+                usuario.clave = txtClave.Text.Trim();
 
 
                 string jsonData = JsonConvert.SerializeObject(usuario);
                 client.Headers[HttpRequestHeader.ContentType] = "application/json";
 
-                byte[] response = client.UploadData(url, "POST", Encoding.UTF8.GetBytes(jsonData));
-                string responseString = Encoding.UTF8.GetString(response);
+                string response = client.UploadString(url, "POST", jsonData);
 
-                DisplayAlert("Exito", "Usuario creado exitosamente", "Aceptar");
-
+                DisplayAlert("Exito", "Usuario creado exitosamente.\n" +
+                    "Ingrese a la aplicacion con las credenciales creadas", "Aceptar");
+                Navigation.PushAsync(new MainPage());
             }
             else
             {

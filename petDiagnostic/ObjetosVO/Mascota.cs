@@ -7,23 +7,22 @@ namespace petDiagnostic.ObjetosVO
 {
     public class Mascota
     {
-        private int idMascota;
-        private string nombre;
-        private Date fechaNacimiento;
-        private string contextura;
-        private string descripcion;
-        private string colorPelaje;
+        public int idMascota { get; set; }
+        public string nombre { get; set; }
+        public Date fechaNacimiento { get; set; }
+        public string contextura { get; set; }
+        public string descripcion { get; set; }
+        public string colorPelaje { get; set; }
+        public Double peso { get; set; }
+        public string estado { get; set; }
+        public Date fechaRegistro { get; set; }
 
-        private string estado;
-        private Date fechaRegistro;
+        public Usuario usuario { get; set; }
 
-        public int IdMascota { get => idMascota; set => idMascota = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public Date FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
-        public string Contextura { get => contextura; set => contextura = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public string ColorPelaje { get => colorPelaje; set => colorPelaje = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public Date FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
+        public EspecieMascota especieMascota { get; set; }
+
+        public RazaMascota razaMascota { get; set; }
+
+
     }
 }

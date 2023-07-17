@@ -15,7 +15,7 @@
                 <DatePicker x:Name="dateFechaNacimiento" Format="dd/MM/yyyy"/>
                 <Entry x:Name="txtIdentificacion" Placeholder="Nro Identificacion" Keyboard="Numeric"/>
                 <Entry x:Name="txtEmail" Placeholder="Correo Electronico" Keyboard="Email" />
-                <Entry x:Name="txtNroContacto" Placeholder="Nro Contacto" Keyboard="Numeric" />
+                <Entry x:Name="txtNroContacto" Placeholder="Nro Telefonico" Keyboard="Numeric" />
                 <Entry x:Name="txtCallePrincipal" Placeholder="Calle Principal" Keyboard="Text" />
                 <Entry x:Name="txtCalleSecundaria" Placeholder="Calle Secundaria" Keyboard="Text" />
 
