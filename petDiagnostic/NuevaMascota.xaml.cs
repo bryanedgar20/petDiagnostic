@@ -50,7 +50,7 @@ namespace petDiagnostic
                 client.Headers[HttpRequestHeader.ContentType] = "application/json";
                 Console.WriteLine(jsonData);
                 string response = client.UploadString(url, "POST", jsonData);
-
+                Navigation.PushAsync(new MisMascotas(usuarioGlobal));
             //}
             //catch (Exception)
             //{

@@ -17,11 +17,15 @@ namespace petDiagnostic.ObjetosVO
         public string estado { get; set; }
         public Date fechaRegistro { get; set; }
 
+        public string imagen { get; set; }
+
+        public string lblInformacion { get; set; }
         public Usuario usuario { get; set; }
 
         public EspecieMascota especieMascota { get; set; }
 
         public RazaMascota razaMascota { get; set; }
+
 
 
     }

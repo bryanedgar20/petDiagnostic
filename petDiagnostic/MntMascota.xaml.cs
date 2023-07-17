@@ -10,11 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace petDiagnostic
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Mascota : ContentPage
+    public partial class MntMascota : ContentPage
     {
-        public Mascota()
+        ObjetosVO.Mascota mascotaGlobal = new ObjetosVO.Mascota();
+        public MntMascota(ObjetosVO.Mascota mascotaVO)
         {
             InitializeComponent();
+            mascotaGlobal = mascotaVO;
             List<Consulta> items = new List<Consulta>
             {
                 new Consulta { Fecha = "2021-04-04", Texto = "Dolor Abdominal" },
@@ -27,7 +29,7 @@ namespace petDiagnostic
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AgregarConsulta());
+            await Navigation.PushAsync(new AgregarConsulta(mascotaGlobal));
         }
     }
 }

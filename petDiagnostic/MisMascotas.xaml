@@ -26,8 +26,8 @@
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding Imagen}" WidthRequest="50" HeightRequest="50" />
-                                    <Label Grid.Column="1" Text="{Binding nombre}" FontSize="25" VerticalOptions="Center" />
+                                    <Image Source="{Binding imagen}" WidthRequest="50" HeightRequest="50" />
+                                    <Label Grid.Column="1" Text="{Binding lblInformacion}" FontSize="25" VerticalOptions="Center" />
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
