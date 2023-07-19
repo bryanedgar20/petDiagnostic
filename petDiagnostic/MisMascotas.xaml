@@ -13,11 +13,11 @@
                 </Grid.RowDefinitions>
                 <Image Source="profile.png" Aspect="AspectFill" HeightRequest="300"/>
                 <ImageButton Source="add.png" Grid.Row="0" VerticalOptions="End" BackgroundColor="Transparent" HorizontalOptions="End" HeightRequest="70" WidthRequest="70" TranslationY="35" Margin="10,0" Clicked="ImageButton_Clicked"/>
-                
-                <Label x:Name="lblNombreUsuario" FontSize="40" FontAttributes="Bold" TextColor="AliceBlue" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Start" Margin="10,0"/>
-                
-                <Label Text="Mis Mascotas" FontSize="30" FontAttributes="Bold" Grid.Row="1" Margin="10,0"/>
-                <ListView x:Name="myListView" Grid.Row="2" Margin="10, 0" ItemTapped="myListView_ItemTapped" >
+
+                <Label x:Name="lblNombreUsuario" Grid.RowSpan="2" FontSize="30" FontAttributes="Bold" TextColor="AliceBlue" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Start" Margin="10,0"/>
+
+                <Label Text="Mis Mascotas" FontSize="30" FontAttributes="Bold" Grid.Row="2" Margin="10,0"/>
+                <ListView x:Name="myListView" Grid.Row="3" Margin="10, 0" ItemTapped="myListView_ItemTapped" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -27,7 +27,7 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <Image Source="{Binding imagen}" WidthRequest="50" HeightRequest="50" />
-                                    <Label Grid.Column="1" Text="{Binding lblInformacion}" FontSize="25" VerticalOptions="Center" />
+                                    <Label Grid.Column="1" Text="{Binding lblInformacion}" FontSize="20" TextColor="Black" VerticalOptions="Center" />
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

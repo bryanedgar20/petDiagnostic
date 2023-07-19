@@ -24,19 +24,25 @@ namespace petDiagnostic
             
             InitializeComponent();
             usuarioGlobal = usuario;
-            lblNombreUsuario.Text = usuario.primerNombre.Trim()+ " "+ usuario.primerApellido.Trim();
+            lblNombreUsuario.Text = usuario.primerNombre.Trim() + " " + usuario.primerApellido.Trim() + "\n" 
+                + usuario.email +"\n"
+                +usuario.numeroTelefono;
 
             List<ObjetosVO.Mascota> mascotas = ObtenerMascotaPorUsuario(usuario);
 
             mascotas.ForEach(pet =>
             {
-                pet.lblInformacion =pet.especieMascota.nombre +"-"+ pet.nombre +"-"+ pet.razaMascota.nombre;
-                pet.imagen = "huella.png";
+                pet.lblInformacion =pet.especieMascota.nombre +", "+ pet.genero +", "+ pet.nombre +" - "+ pet.razaMascota.nombre;
 
+                if (pet.especieMascota.idEspecieMascota == 1)
+                {
+                    pet.imagen = "iconoPerro.png";
+                }
+                else
+                {
+                    pet.imagen = "iconoGato.png";
+                }
             });
-
-            
-
             myListView.ItemsSource = mascotas;
         }
 
@@ -61,10 +67,4 @@ namespace petDiagnostic
             return listMascota;
         }
     }
-}
-
-public class Item
-{
-    public string Imagen { get; set; }
-    public string Texto { get; set; }
 }

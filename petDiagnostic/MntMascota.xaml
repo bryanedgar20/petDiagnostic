@@ -14,6 +14,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0" Margin="25">
@@ -22,40 +24,42 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image Source="pet.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0">
+                    <Image x:Name="imgProfile" WidthRequest="100" Grid.Column="0" HeightRequest="100" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" >
                         <Image.Clip>
                             <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
                         </Image.Clip>
                     </Image>
                     <Grid Grid.Column="1" VerticalOptions="Center" Margin="20,0">
-                        <Label Text="Loki" FontSize="30" FontAttributes="Bold" TextColor="Black" Grid.Row="0" HorizontalOptions="Start"/>
-                        <Label Text="Golden" FontSize="20" TextColor="Black" Grid.Row="1" HorizontalOptions="Start"/>
-                        <Label Text="Perro" FontSize="15" TextColor="Black" Grid.Row="2" HorizontalOptions="Start"/>
+                        <Label x:Name="txtNombre" Margin="-20" FontSize="30" FontAttributes="Bold" TextColor="Black" Grid.Row="0" HorizontalOptions="Start"/>
+                        <Label x:Name="txtGenero" Margin="-10" FontSize="20" TextColor="Black" Grid.Row="1" HorizontalOptions="Start"/>
+                        <Label x:Name="txtRaza" Margin="-10" FontSize="20" TextColor="Black" Grid.Row="2" HorizontalOptions="Start"/>
+                        <Label x:Name="txtEdad" Margin="-11" FontSize="15" TextColor="Black" Grid.Row="3" HorizontalOptions="Start"/>
+                        <Label x:Name="txtEspecie"  Margin="0" FontSize="15" TextColor="Black" Grid.Row="4" HorizontalOptions="Start"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="1" BackgroundColor="AliceBlue" Padding="10" Margin="10,0">
                     <Grid Grid.Column="0">
-                        <Label Text="Peso actual" FontSize="20" FontAttributes="Italic" Grid.Column="0" Margin="20,0"/>
+                        <Label Text="Peso actual:" FontSize="20" FontAttributes="Bold" Grid.Column="0" Margin="20,0"/>
                     </Grid>
                     <Grid Grid.Column="0">
-                        <Label Text="8 Kg." FontSize="25" FontAttributes="Bold" Grid.Column="1" Margin="20,0"/>
+                        <Label x:Name="txtPeso" FontSize="25" FontAttributes="Bold" Grid.Column="1" Margin="20,0"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2" BackgroundColor="AliceBlue" Padding="10"  Margin="10,0">
                     <Label Text="Enfermedades o Alergias" FontSize="20" FontAttributes="Bold" Grid.Row="0" Margin="20,0"/>
-                    <Label Text="Ninguna" FontSize="20" FontAttributes="None" Grid.Row="1" Margin="20,0"/>
+                    <Label x:Name="txtAlergias" FontSize="20" FontAttributes="None" Grid.Row="1" Margin="20,0"/>
                 </Grid>
                 <Grid Grid.Row="3" BackgroundColor="AliceBlue" Padding="10" Margin="10,0">
-                    <Label Text="Cuidados especiales" FontSize="20" FontAttributes="Bold" Grid.Row="0" Margin="20,0"/>
-                    <Label Text="Ninguno" FontSize="20" FontAttributes="None" Grid.Row="1" Margin="20,0"/>
+                    <Label Text="Color pelaje" FontSize="20" FontAttributes="Bold" Grid.Row="0" Margin="20,0"/>
+                    <Label x:Name="txtColorPelaje" FontSize="20" FontAttributes="None" Grid.Row="1" Margin="20,0"/>
                 </Grid>
                 <Grid Grid.Row="4" BackgroundColor="AliceBlue" Padding="10" Margin="10,0">
-                    <Label Text="Clìnica Veterinaria" FontSize="20" FontAttributes="Bold" Grid.Row="0" Margin="20,0"/>
-                    <Label Text="Medipet" FontSize="20" FontAttributes="None" Grid.Row="1" Margin="20,0"/>
+                    <Label Text="Información Adicional" FontSize="20" FontAttributes="Bold" Grid.Row="0" Margin="20,0"/>
+                    <Label x:Name="txtInformacion" FontSize="20" FontAttributes="None" Grid.Row="1" Margin="20,0"/>
                 </Grid>
-                <Label Text="Consultas" FontSize="25" FontAttributes="Bold" Grid.Row="5" Margin="10,0" Padding="0,10,0,0"/>
-                <Button Text="Agregar" BackgroundColor="LightGreen" Margin="10,0" Grid.Row="6" Clicked="Button_Clicked"></Button>
-                <ListView x:Name="myListView" Margin="10, 0" BackgroundColor="White" Grid.Row="7">
+                <Label Text="Consultas" TextColor="Black" FontSize="20" FontAttributes="Bold" Grid.Row="5" Margin="10,0" Padding="0,10,0,0"/>
+                <Button Text="Agregar diagnóstico" FontSize="20" BackgroundColor="LightGreen" Margin="10,0" Grid.Row="6" Clicked="Button_Clicked"></Button>
+                <ListView x:Name="myListView" Margin="10, 0" BackgroundColor="White" Grid.Row="8" ItemTapped="myListView_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -64,8 +68,8 @@
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" Text="{Binding Fecha}" FontSize="17" VerticalOptions="Center" Padding="10"/>
-                                    <Label Grid.Column="1" Text="{Binding Texto}" FontSize="20" VerticalOptions="Center" />
+                                    <Label Grid.Column="0" Text="{Binding lblFechaRegistro}" FontSize="12" VerticalOptions="Center" Padding="10"/>
+                                    <Label Grid.Column="1" Text="{Binding lblInformacion}" FontSize="16" VerticalOptions="Center" />
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

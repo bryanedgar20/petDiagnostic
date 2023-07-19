@@ -59,8 +59,8 @@ namespace petDiagnostic
             }
             else
             {
-                var mensajeError = "Los siguientes campos son requeridos: "+ String.Join(",\n", errors);
-                DisplayAlert("Error",mensajeError, "Ok");
+                var mensajeError = " Revise que los siguientes tengan informacion: "+ String.Join(",\n", errors);
+                DisplayAlert("Advertencia!",mensajeError, "Ok");
             }
 
         }
@@ -71,46 +71,46 @@ namespace petDiagnostic
 
             if (String.IsNullOrWhiteSpace(txtPrimerNombre.Text))
             {
-                errores.Add("Primer nombre");
+                errores.Add("-Primer nombre");
             }
             if (String.IsNullOrWhiteSpace(txtPrimerApellido.Text))
             {
-                errores.Add("Primer apellido");
+                errores.Add("-Primer apellido");
             }
             if (String.IsNullOrWhiteSpace(dateFechaNacimiento.Date.ToString()))
             {
-                errores.Add("Fecha nacimiento");
+                errores.Add("-Fecha, nacimiento");
             }
             if (String.IsNullOrWhiteSpace(txtIdentificacion.Text))
             {
-                errores.Add("Nro identificacion");
+                errores.Add("-Nro. identificación");
             }
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
             {
-                errores.Add("Correo electronico");
+                errores.Add("-Correo electrónico");
             }
             if (String.IsNullOrWhiteSpace(txtNroContacto.Text))
             {
-                errores.Add("Nro contacto");
+                errores.Add("-Nro. Teléfono");
             }
             if (String.IsNullOrWhiteSpace(txtCallePrincipal.Text))
             {
-                errores.Add("Calle principal");
+                errores.Add("-Calle principal");
             }
             if (String.IsNullOrWhiteSpace(txtNickName.Text))
             {
-                errores.Add("Usuario");
+                errores.Add("-Usuario");
             }
 
             if (String.IsNullOrWhiteSpace(txtClave.Text))
             {
-                errores.Add("Clave");
+                errores.Add("-Clave");
             }
 
-            if (String.IsNullOrWhiteSpace(txtPrimerNombre.Text) &&
-                txtClave.Text != txtClaveConfirmar.Text)
+
+            if (txtClave.Text != txtClaveConfirmar.Text)
             {
-                errores.Add("Las claves deben coincidir");
+                errores.Add("-Las claves deben coincidir");
             }
             return errores;
         }

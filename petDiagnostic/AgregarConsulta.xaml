@@ -17,12 +17,14 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Image Grid.Row="0" BackgroundColor="LightGray" Source="vet.png" Aspect="AspectFill" HeightRequest="200"/>
+                <Image Grid.Row="0" BackgroundColor="LightGray" Source="clinicv2.png" Aspect="AspectFill" HeightRequest="200"/>
                 <Grid Grid.Row="1" Margin="20,0">
-                    <Button Grid.Column="0" Text="Seleccionar la Fecha" Clicked="Button_Clicked" BackgroundColor="SkyBlue" />
-                    <Entry Grid.Column="1" x:Name="dateEntry" Placeholder="Seleccione una fecha" IsReadOnly="True" />
-                    <DatePicker x:Name="datePicker" IsVisible="False" DateSelected="datePicker_DateSelected"/>                    
+                    <Button Grid.Column="0" Text="Seleccionar la Fecha" FontSize="12" FontAttributes="Bold" Clicked="Button_Clicked" BackgroundColor="SkyBlue" />
+                    <Entry Grid.Column="1" x:Name="dateEntry" Placeholder="yyyy-MM-dd" IsReadOnly="True" />
+                    <DatePicker x:Name="datePicker" Format="yyyy-MM-dd" IsVisible="False" DateSelected="datePicker_DateSelected"/>
                 </Grid>
                 <Label Grid.Row="2" Text="Sintomas:" FontAttributes="Bold" VerticalOptions="End" Margin="20,20,0,0" FontSize="20" />
                 <ListView Grid.Row="3" x:Name="listViewSintomas" SelectionMode="None"  HeightRequest="150">
@@ -46,8 +48,12 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Editor Grid.Row="4" Grid.RowSpan="6" Placeholder="Ingrese una descripcion adicional de lo que padece su mascota" Keyboard="Chat" MaxLength="100" HeightRequest="100" Margin="35,0,35,0" VerticalOptions="StartAndExpand" />
-                <Button Grid.Row="10" Text="Diagnosticar" BackgroundColor="LightGreen" Margin="40"/>
+                <Editor Grid.Row="4" Grid.RowSpan="7" x:Name="txtInfoAdicional" Placeholder="Ingrese una descripción adicional de lo que padece su mascota" Keyboard="Chat" MaxLength="100" HeightRequest="100" Margin="35,0,35,0" VerticalOptions="StartAndExpand" />
+
+                <Grid x:Name="iconWait" Grid.Row="11" Margin="20,0">
+                    <ActivityIndicator IsRunning="true" HorizontalOptions="Center"/>
+                </Grid>
+                <Button Grid.Row="11"  Text="Diagnosticar" x:Name="btnDiagnosticar" Clicked="btnDiagnosticar_Clicked" BackgroundColor="LightGreen" Margin="40"/>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

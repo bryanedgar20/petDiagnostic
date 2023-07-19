@@ -13,15 +13,15 @@
                 <Entry x:Name="txtSegundoNombre" Placeholder="Segundo Nombre" Keyboard="Text" />
                 <Entry x:Name="txtSegundoApellido" Placeholder="Segundo Apellido" Keyboard="Text" />
                 <DatePicker x:Name="dateFechaNacimiento" Format="dd/MM/yyyy"/>
-                <Entry x:Name="txtIdentificacion" Placeholder="Nro Identificacion" Keyboard="Numeric"/>
-                <Entry x:Name="txtEmail" Placeholder="Correo Electronico" Keyboard="Email" />
-                <Entry x:Name="txtNroContacto" Placeholder="Nro Telefonico" Keyboard="Numeric" />
+                <Entry x:Name="txtIdentificacion" Placeholder="Nro. Identificación" Keyboard="Numeric"/>
+                <Entry x:Name="txtEmail" Placeholder="Correo Electrónico" Keyboard="Email" />
+                <Entry x:Name="txtNroContacto" Placeholder="Nro. Telefónico" Keyboard="Numeric" />
                 <Entry x:Name="txtCallePrincipal" Placeholder="Calle Principal" Keyboard="Text" />
                 <Entry x:Name="txtCalleSecundaria" Placeholder="Calle Secundaria" Keyboard="Text" />
 
                 <Entry x:Name="txtNickName" Placeholder="Usuario" Keyboard="Text" />
                 <Entry x:Name="txtClave" Placeholder="Clave" Keyboard="Text" IsPassword="true" />
-                <Entry x:Name="txtClaveConfirmar" Placeholder="ConfirmarClave" Keyboard="Text" IsPassword="true" />
+                <Entry x:Name="txtClaveConfirmar" Placeholder="Confirmar Clave" Keyboard="Text" IsPassword="true" />
 
                 <Button x:Name="btbGuardar" Text="Guardar" BackgroundColor="GreenYellow" TextColor="Black" FontSize="16" Clicked="btbGuardar_Clicked"/>
 

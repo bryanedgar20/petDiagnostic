@@ -16,7 +16,9 @@ namespace petDiagnostic.ObjetosVO
         public Double peso { get; set; }
         public string estado { get; set; }
         public Date fechaRegistro { get; set; }
-
+        public string genero { get; set; }
+        public string alergias { get; set; }
+        public string fechaNacimientoStr { get; set; }
         public string imagen { get; set; }
 
         public string lblInformacion { get; set; }

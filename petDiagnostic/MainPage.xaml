@@ -12,7 +12,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Image Source="huella.png" Aspect="Fill" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" 
+            <Image Source="veterinary.png" Aspect="Fill" Grid.Row="0" VerticalOptions="End" HorizontalOptions="Center" 
                      HeightRequest="200" WidthRequest="200" TranslationY="20" Margin="30"></Image>
             <StackLayout Grid.Row="2" Margin="45,15">
                 <Label Text="Usuario" />
